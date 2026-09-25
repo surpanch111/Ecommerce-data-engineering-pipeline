@@ -1,0 +1,32 @@
+# Python & Environments
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+
+# Data Files (Do not push 40MB Kaggle CSVs to GitHub!)
+data/
+*.csv
+*.zip
+
+# dlt Configuration & Secrets (CRITICAL for security!)
+.dlt/secrets.toml
+
+# dbt Artifacts & Logs
+transform/dbt_packages/
+transform/target/
+transform/logs/
+transform/*.log
+
+# Airflow Local Standalone Files
+airflow.cfg
+airflow.db
+webserver_config.py
+logs/
+airflow-webserver.pid
+standalone_admin_password.txt
+
+# Mac OS System Files
+.DS_Store

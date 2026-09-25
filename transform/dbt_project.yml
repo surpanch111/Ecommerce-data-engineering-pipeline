@@ -1,0 +1,33 @@
+name: 'ecommerce_pipeline'
+version: '1.0.0'
+config-version: 2
+
+profile: 'ecommerce_profile'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  ecommerce_pipeline:
+    # Bronze Layer: Raw data, mapped 1:1, light casting
+    bronze:
+      +schema: bronze 
+      +materialized: view
+    
+    # Silver Layer: Cleansed, joined, normalized data
+    silver:
+      +schema: silver
+      +materialized: table
+    
+    # Gold Layer: Business aggregate tables and dimensional models
+    gold:
+      +schema: gold
+      +materialized: table

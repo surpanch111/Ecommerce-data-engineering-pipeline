@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_orders_joined
+    description: "Silver layer - intermediate joined orders and customers"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+      - name: order_status
+      - name: customer_city
+      - name: customer_state

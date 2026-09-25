@@ -1,0 +1,8 @@
+dlt[bigquery]
+kaggle
+requests
+pandas
+dbt-core
+dbt-bigquery
+python-dotenv
+apache-airflow

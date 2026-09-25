@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: mart_sales_by_city
+    description: "Gold layer - business ready aggregation of sales by city"
+    columns:
+      - name: customer_city
+      - name: customer_state
+      - name: total_orders

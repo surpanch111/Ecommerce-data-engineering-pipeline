@@ -1,0 +1,23 @@
+ecommerce_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: "YOUR-GCP-PROJECT-ID"
+      dataset: ecommerce_bronze # Default dataset
+      threads: 4
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      
+    prod:
+      type: bigquery
+      method: service-account
+      project: "GCP-PROJECT-ID"
+      dataset: ecommerce_bronze
+      threads: 4
+      keyfile: "YOUR_SERVICE_ACCOUNT_KEY_PATH.json"
+      timeout_seconds: 300
+      location: US
+      priority: interactive

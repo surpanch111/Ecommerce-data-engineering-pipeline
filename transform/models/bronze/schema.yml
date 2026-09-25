@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Bronze layer - raw customers from Kaggle Olist dataset"
+    columns:
+      - name: customer_id
+        description: "Key to the orders dataset."
+        tests:
+          - unique
+          - not_null
+      - name: customer_unique_id
+        description: "Unique identifier of a customer."
+      - name: customer_zip_code_prefix
+        description: "First five digits of customer zip code"
+      - name: customer_city
+        description: "Customer city name"
+      - name: customer_state
+        description: "Customer state"
+
+  - name: stg_orders
+    description: "Bronze layer - raw orders from Kaggle Olist dataset"
+    columns:
+      - name: order_id
+        description: "Unique identifier of the order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Key to the customer dataset."
+        tests:
+          - not_null
+      - name: order_status
+        description: "Reference to the order status (delivered, shipped, etc)."

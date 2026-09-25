@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: "{{ target.project }}"
+    schema: ecommerce_bronze # Raw schema where dlt dumps data
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
