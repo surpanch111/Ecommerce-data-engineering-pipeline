@@ -76,3 +76,4 @@ export AIRFLOW_HOME=$(pwd)
 airflow standalone
 ```
 Navigate to `http://localhost:8080` (password generated in Terminal), and manually trigger the `ecommerce_daily_pipeline` DAG!
+*Built with ❤️ by Anil Sharma*
