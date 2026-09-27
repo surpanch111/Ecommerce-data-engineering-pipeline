@@ -77,7 +77,8 @@ airflow standalone
 ```
 Navigate to `http://localhost:8080` (password generated in Terminal), and manually trigger the `ecommerce_daily_pipeline` DAG!
 ```
-### 4. Architecture diagram
+---
+### Architecture diagram
 
           Olist E-Commerce Dataset
                           │
